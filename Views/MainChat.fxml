@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MainChat">
+   <top>
+      <MenuBar fx:id="topMenu" prefHeight="17.0" prefWidth="737.0" BorderPane.alignment="CENTER">
+        <menus>
+            <Menu fx:id="topMenu_Contacts" mnemonicParsing="false" text="Контакты">
+              <items>
+                  <MenuItem fx:id="topMenu_Contacts_SaveFile" mnemonicParsing="false" text="Сохранить в файл" />
+                <MenuItem fx:id="topMenu_Contacts_LoadFile" mnemonicParsing="false" text="Загрузить из файла" />
+              </items>
+            </Menu>
+          <Menu fx:id="topMenu_Settings" mnemonicParsing="false" text="Настройки">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="topMenu_Info" mnemonicParsing="false" text="Инфо">
+               <items>
+                  <MenuItem fx:id="menuBar_Info" mnemonicParsing="false" onAction="#menuBar_menuBar_Info_Click" text="Опрограмме" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <ListView fx:id="listViewContacts" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <VBox prefHeight="586.0" prefWidth="782.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listViewChat" prefHeight="560.0" prefWidth="782.0" VBox.vgrow="SOMETIMES">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="contextMenu_Exit" mnemonicParsing="false" onAction="#mouseClick_contextMenu_Exit" text="Выход" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <HBox prefHeight="30.0" prefWidth="782.0">
+               <children>
+                  <TextField fx:id="fieldMessege" onKeyPressed="#onKeyEntrer" prefHeight="25.0" prefWidth="470.0" HBox.hgrow="SOMETIMES" />
+                  <Button fx:id="buttonSendMessage" mnemonicParsing="false" onAction="#buttonSendMessage_Click" prefHeight="25.0" prefWidth="91.0" text="Отправить" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
